@@ -1,0 +1,62 @@
+[
+  {
+    "question": "1. AngularJS is a ____",
+    "choices": [
+      "HTML framework",
+      "Java framework",
+      "JavaScript framework",
+      "SQL framework"
+    ],
+    "answerIndex": "JavaScript framework"
+  },
+  {
+    "question": "2. AngularJS is perfect for?",
+    "choices": [
+      "MPAs",
+      "DPAs",
+      "CPAs",
+      "SPAs"
+    ],
+    "answerIndex": "SPAs"
+  },
+  {
+    "question": "3. Among the following, on which architectural pattern is AngularJS based?",
+    "choices": [
+      "Decorator Pattern",
+      "Oberver Pattern",
+      "MVVM Architecture Pattern",
+      "MVC Architecture Pattern"
+    ],
+    "answerIndex": "MVC Architecture Pattern"
+  },
+  {
+    "question": "4. Choose the correct syntax for writing AngularJS expression.",
+    "choices": [
+      "[expression]",
+      "{{expression}}",
+      "{{{expresssion}}}",
+      "{expression}"
+    ],
+    "answerIndex": "{{expression}}"
+  },
+  {
+    "question": "5. Choose the reactor which is used to bind the application data to the HTML view in AngularJS.",
+    "choices": [
+      "ng-bind directive",
+      "ng-model-directive",
+      "ng-init-directive",
+      "ng-app directive"
+    ],
+    "answerIndex": "ng-bind directive"
+  },
+  {
+    "question": "6. Choose the incorrect AngularJS filter.",
+    "choices": [
+      "orderby",
+      "email",
+      "currency",
+      "lowercase"
+    ],
+    "answerIndex": "email"
+  }
+]

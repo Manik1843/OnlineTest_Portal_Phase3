@@ -1,0 +1,53 @@
+<div class = "container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+    <div *ngFor = "let question of questions; let i=index" class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title addsize">{{ question.question }}</h5>
+          <div *ngFor="let choice of question.choices; let j=index" class="form-check card-text">
+            <input class="form-check-input" type="radio" 
+            name="choice" id="choice{{ j }}" 
+            [value]="choice"  [(ngModel)]="selectedOption">
+            <label class="form-check-label" for="option{{ j }}">
+              {{ choice }}
+            </label>
+          </div>
+          <button class="btn btn-primary" (click)="getSelectedOptionIndex(i,question)" [disabled] = "selectedQuestion===question || isAnswered(i)">Check Answer</button>
+          <div *ngIf="selectedQuestion===question || isAnswered(i)">
+            <div [ngClass] = "isCorrect1(i)?'correct':'wrong'">{{answerResult[i]}}</div>
+         </div>
+        </div>
+        </div>
+        <button class="btn btn-primary mt-5 mb-3" data-toggle="modal" data-target="#exampleModal" (click)="getResult()" [disabled] = "!isAllQuestionAnswered()">Check Result</button>
+        <div style="background-color: blueviolet;">
+          <span style="text-decoration: underline;">Number of Answered Qustions: </span><div *ngIf = "viewResult" style="font-weight: bold;">{{numberOfCorrectAnswers}}</div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                Number of Answered Qustions: <div *ngIf = "viewResult">{{numberOfCorrectAnswers}}</div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+  </div>
+</div>
+
+
+
+
